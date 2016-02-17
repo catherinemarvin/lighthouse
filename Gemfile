@@ -21,8 +21,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'haml'
-gem 'haml-rails'
+gem 'haml', '~> 4.0.7'
+gem 'haml-rails', '~> 0.9.0'
+gem 'react-rails', '~> 1.6.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
