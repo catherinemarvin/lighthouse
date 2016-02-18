@@ -4,9 +4,9 @@
 
 .welcome-index {
   .intro-banner {
-    left: 20%;
-    right: 20%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     height: 70vh;
     background-image: url(image_path("welcome.jpg"));
@@ -14,9 +14,7 @@
   }
 
   .intro-text {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    text-align: center;
     h1, h3 {
       text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     }
