@@ -2,5 +2,7 @@
   .container
     .navbar-header
       %a.navbar-brand Lighthouse
-    %form.navbar-form.navbar-right
-      %input.form-control{placeholder: "Search for a film..."}
+    = form_tag(search_path, method: "get", class: "navbar-form navbar-right") do
+      = text_field_tag("query", nil, placeholder: "Search...", class: "navbar-form navbar-right")
+    -#%form.navbar-form.navbar-right{ action: search_path() }
+      -#%input.form-control{placeholder: "Search for a film..."}
