@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml', '~> 4.0.7'
 gem 'haml-rails', '~> 0.9.0'
 gem 'react-rails', '~> 1.6.0'
+gem 'httparty', '~> 0.13.7'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
