@@ -2,5 +2,7 @@
   .search-header.container
     .row
       .col-lg-12
-        %p Found N Results
+        %p Found #{@movies.length} Results
+        - @movies.each do |movie|
+          %p= movie["title"]
 

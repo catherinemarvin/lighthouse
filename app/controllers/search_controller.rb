@@ -4,7 +4,7 @@ class SearchController < ApplicationController
 
     tmdb = ::TMDB.new
 
-    puts tmdb.search_movie(search_query)
-
+    response = tmdb.search_movie(search_query)
+    @movies = response.parsed_response["results"]
   end
 end
