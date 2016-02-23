@@ -5,14 +5,18 @@ class SearchController < ApplicationController
     tmdb = ::TMDB.new
 
     response = tmdb.search_movie(search_query)
-    @movies = response.parsed_response["results"]
 
-    ActiveRecord::Base.transaction do 
+    raw_movies = response.parsed_response["results"]
+    @movies = raw_movies.map do |movie|
+      film = Movie.find_or_initialize_by(tmdb_id: movie["id"])
+      film.title = movie["original_title"]
+      film.description = movie["overview"]
+      film
+    end
+
+    ActiveRecord::Base.transaction do
       @movies.each do |movie|
-        film = Movie.find_or_initialize_by(tmdb_id: movie["id"])
-        film.title = movie["original_title"]
-        film.description = movie["overview"]
-        film.save
+        movie.save
       end
     end
   end
