@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   def search
     search_query = params[:query]
 
-    tmdb = ::TMDB.new
+    tmdb = TMDB.instance
 
     response = tmdb.search_movie(search_query)
 

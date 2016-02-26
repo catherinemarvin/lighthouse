@@ -1,10 +1,12 @@
 require 'httparty'
+require 'singleton'
 
 class TMDB
   include HTTParty
+  include Singleton
   base_uri "https://api.themoviedb.org/3"
 
-  def initialize()
+  def initialize
     @api_key = Figaro.env.tmdb_key
 
     config_info = configuration()
